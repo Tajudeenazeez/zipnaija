@@ -24,22 +24,22 @@ const Zipcode = () => {
   };
 
   return (
-    <div className="">
-        <div className="flex flex-col gap-8 justify-center items-center mx-auto w-full h-[100vh]">
+    <div className="w-full">
+      <div className="p-4 flex flex-col gap-8 justify-center items-center mx-auto w-full h-[100vh]">
       <div className="flex flex-col justify-center items-center  ">
-        <h2 className="text-sm sm:text-[2.5rem] leading-2 md:leading-10 text-[#1967a9]">
+        <h2 className="mb-2 text-sm sm:text-[2.5rem] leading-2 md:leading-10 text-[#1967a9]">
           We just need your zip
         </h2>
-        <p className="text-xs text-gray-600 ">
+        <p className="text-center text-xs text-gray-600 ">
           In other to make sure our service is available in your area please
           enter your zip code below
         </p>
       </div>
-      <form onSubmit={onSubmit} action="" className=" uppercase w-1/4 ">
-        <div className="">
-        <div className="flex justify-evenly">
+        <div className="w-full">
+        <form onSubmit={onSubmit}>
+          <div className="block sm:flex sm:flex-row sm:justify-center">
           <input
-            className=" bg-gray-300 text-gray-600 uppercase p-4 text-center focus:outline outline-offset-2 outline-2 outline-gray-300 rounded m-2"
+            className="w-full sm:w-auto bg-gray-300 text-gray-600 uppercase p-4 text-center focus:outline outline-offset-2 outline-2 outline-gray-300 rounded m-2"
             type="number"
             name="zip"
             value={zip}
@@ -47,16 +47,17 @@ const Zipcode = () => {
             onChange={(e) => setZip(e.target.value)}
           />
           <button
-            className="not-allowed bg-[#1967a9] text-white uppercase p-4 text-center cursor-pointer rounded m-2 hover:bg-blue-400"
+            className="w-full sm:w-auto not-allowed bg-[#1967a9] text-white uppercase p-4 text-center cursor-pointer rounded m-2 hover:bg-blue-400"
             type="submit"
             
             disabled={zip.length === 0}
           >
             Submit
           </button>
+          </div>
+          </form>
         </div>
-        </div>
-      </form>
+      
       {!zip ? (
         ""
       ) : displayValidation === true ? (
